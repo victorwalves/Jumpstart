@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Dashboard } from './components/Dashboard';
 import { Wrapped } from './components/Wrapped';
-import { teamData } from './data/team';
+import { teamData } from './data/team.jsx';
 
 function App() {
     const [currentView, setCurrentView] = useState('dashboard'); // 'dashboard' | 'wrapped'

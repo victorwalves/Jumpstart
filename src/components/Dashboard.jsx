@@ -29,9 +29,8 @@ export function Dashboard({ team, onMemberSelect }) {
                 </header>
 
                 {/* TEAM GRID */}
-                {/* TEAM GRID */}
                 <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 md:gap-10 justify-items-center">
-                    {team.map((member) => (
+                    {[...team].sort((a, b) => a.name.localeCompare(b.name)).map((member) => (
                         <div key={member.id} className="w-full max-w-[320px] sm:max-w-none">
                             <TeamCard
                                 member={member}

@@ -5,6 +5,10 @@ import dudaImg from '../assets/duda.jpg';
 import samaraImg from '../assets/samara.jpg';
 import thiagoImg from '../assets/thiago.jpg';
 import amandaImg from '../assets/amanda.jpg';
+import biaImg from '../assets/bia.jpg';
+import josiasImg from '../assets/josias.jpg';
+import kaiImg from '../assets/kai.jpg';
+import luizImg from '../assets/luiz.jpg';
 
 export const teamData = [
     {
@@ -583,6 +587,394 @@ export const teamData = [
                 cta: "Win 2026",
                 ctaLink: "https://www.jumpstartimmigration.com/",
                 footer: "Official Hybrid Lawyer"
+            }
+        ]
+    },
+    {
+        id: 'bia',
+        name: 'Bia',
+        role: 'Operations Lead',
+        avatar: biaImg,
+        theme: 'tech',
+        stats: {
+            items: [
+                { label: 'Processos', value: '100%' },
+                { label: 'Caos', value: '0%' },
+                { label: 'Adaptação', value: 'Flash' }
+            ]
+        },
+        slides: [
+            {
+                type: 'intro',
+                bg: 'bg-tech',
+                title: "BIA WRAPPED 2025",
+                subtitle: "Menos de 2 meses de casa? Impossível.",
+                sticker: "Veteran Rookie 🚀"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "O Efeito Bia ⏳",
+                highlight: "SENIOR",
+                highlightLabel: "LEVEL",
+                text: "Você chegou ontem, mas parece que fundou a empresa com a gente. A adaptação mais rápida da história."
+            },
+            {
+                type: 'persona',
+                bg: 'bg-christmas-green',
+                title: "A Grande Organizadora",
+                mainText: "\"MAGIC\"",
+                subText: "Você olhou para o caos e disse: 'Vamos colocar processos nisso'. E a mágica aconteceu.",
+                sticker: "Organizer ✨",
+                showAvatar: true
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "Aceleradora de Sonhos 🚀",
+                highlight: "SPEED",
+                highlightLabel: "BOOST",
+                text: "Graças aos seus processos, os clientes estão sendo aprovados mais rápido. Menos burocracia, mais resultados."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Onde está o arquivo?",
+                highlight: "FOUND",
+                highlightLabel: "IT!",
+                text: "Antes: 'Ninguém sabe'. Agora: 'A Bia já organizou na pasta certa'. Paz de espírito definida."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Coração da Operação ❤️",
+                highlight: "TEAM",
+                highlightLabel: "MOM",
+                text: "Você acolhe e ajuda todo mundo. Não é só sobre processos, é sobre pessoas."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "A Guardiã da Linha",
+                highlight: "ON",
+                highlightLabel: "TRACK",
+                text: "Doce, mas firme. Você garante que o trem não saia dos trilhos (e a gente agradece por isso)."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-green',
+                title: "Sua Filosofia",
+                highlight: "FLOW",
+                highlightLabel: "= SUCCESS",
+                text: "Processo organizado = Cliente feliz = Sucesso da Jumpstart."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "Meta para 2026:",
+                highlight: "SCALE",
+                highlightLabel: "PERFECTLY",
+                text: "A casa está arrumada. Agora vamos construir um arranha-céu em cima dela."
+            },
+            {
+                type: 'outro',
+                bg: 'bg-black',
+                title: "Feliz Natal, Bia!",
+                text: "Que bom que você chegou. A Jumpstart finalmente encontrou seu eixo. ✨🎁",
+                cta: "Keep Organizing",
+                ctaLink: "https://www.jumpstartimmigration.com/",
+                footer: "Official Process Queen"
+            }
+        ]
+    },
+    {
+        id: 'josias',
+        name: 'Josias',
+        role: 'Operations & Engineering',
+        avatar: josiasImg,
+        theme: 'tech',
+        stats: {
+            items: [
+                { label: 'Lógica', value: '100%' },
+                { label: 'Proatividade', value: 'Level 1000' },
+                { label: 'Energia', value: 'Solar' }
+            ]
+        },
+        slides: [
+            {
+                type: 'intro',
+                bg: 'bg-tech',
+                title: "JOSIAS WRAPPED 2025",
+                subtitle: "Direto de Aracaju para o Mundo 🌎",
+                sticker: "Engineer Writer 🦀"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Engenharia de Petições ⚙️",
+                highlight: "LOGIC",
+                highlightLabel: "& ARGUMENTS",
+                text: "Você cursa Engenharia da Computação, mas quem ganha são os clientes. Seus argumentos têm a lógica perfeita de um código sem bugs."
+            },
+            {
+                type: 'persona',
+                bg: 'bg-christmas-green',
+                title: "O Vidente",
+                mainText: "\"PREMONITION\"",
+                subText: "Você resolve problemas antes mesmo de eles aparecerem. Isso não é proatividade, é premonição.",
+                sticker: "Proactive King 👑",
+                showAvatar: true
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Senhor dos Detalhes",
+                highlight: "RAM",
+                highlightLabel: "MEMORY",
+                text: "Você sabe o status daquela aplicação obscura de 3 meses atrás de cabeça. Sua memória RAM é impressionante."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "Onipresente",
+                highlight: "ALWAYS",
+                highlightLabel: "ONLINE",
+                text: "Precisa de ajuda? O Josias já respondeu. 'Sempre presente' não é só um elogio, é um fato."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Coração de Ouro",
+                highlight: "HELPER",
+                highlightLabel: "HERO",
+                text: "Inteligente, técnico, mas acima de tudo: prestativo. Você nunca deixa um colega na mão."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "O Sol da Jumpstart ☀️",
+                highlight: "ARACAJU",
+                highlightLabel: "ENERGY",
+                text: "Trazendo o calor e a energia do Nordeste para a nossa operação. A UFS está criando um monstro (no bom sentido)!"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-green',
+                title: "Malabarista Acadêmico",
+                highlight: "MULTI",
+                highlightLabel: "TASKER",
+                text: "Dominar integrais na faculdade e aprovar vistos no trabalho? Só para quem pode."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "Meta 2026:",
+                highlight: "BUILDING",
+                highlightLabel: "BRIDGES 🌉",
+                text: "Continuar conectando sua engenharia com o sonho dos nossos clientes."
+            },
+            {
+                type: 'outro',
+                bg: 'bg-black',
+                title: "Feliz Natal, Josias!",
+                text: "Obrigado por toda a dedicação e inteligência. Você é gigante! 🚀🦀",
+                cta: "Code Future",
+                ctaLink: "https://www.jumpstartimmigration.com/",
+                footer: "Official Engineer Writer"
+            }
+        ]
+    },
+    {
+        id: 'kai',
+        name: 'Kai',
+        role: 'Head of Legal',
+        avatar: kaiImg,
+        theme: 'tech',
+        stats: {
+            items: [
+                { label: 'Dias de Casa', value: '15' },
+                { label: 'Responsabilidade', value: 'Total' },
+                { label: 'Visão', value: 'Império' }
+            ]
+        },
+        slides: [
+            {
+                type: 'intro',
+                bg: 'bg-tech',
+                title: "KAI WRAPPED 2025",
+                subtitle: "Do Tradicional ao Exponencial em 15 dias.",
+                sticker: "New Sheriff ⚖️"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "O Salto de Fé 🪂",
+                highlight: "BIG",
+                highlightLabel: "SWITCH",
+                text: "Trocou o escritório tradicional pela loucura da Jumpstart. E não olhou para trás."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Eu Sou a Equipe",
+                highlight: "ONE MAN",
+                highlightLabel: "ARMY",
+                text: "Hoje o Legal Team é você, você e você. E está dando conta do recado como um batalhão."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Download de Cérebro 🧠",
+                highlight: "FAST",
+                highlightLabel: "LEARNING",
+                text: "Sua curva de aprendizado não é uma curva, é uma linha vertical. Você absorveu a operação em tempo recorde."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "Já está Entregando?",
+                highlight: "DONE",
+                highlightLabel: "DEAL",
+                text: "15 dias de casa e já tem petição saindo do forno. A tinta da caneta nem secou e você já está assinando aprovações."
+            },
+            {
+                type: 'persona',
+                bg: 'bg-christmas-green',
+                title: "O Arquiteto",
+                mainText: "\"BUILDER\"",
+                subText: "Você não veio só para advogar. Veio para desenhar como o jurídico da Jump vai funcionar!",
+                sticker: "Legal Architect 📐",
+                showAvatar: true
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "Camaleão Jurídico",
+                highlight: "ADAPT",
+                highlightLabel: "ABILITY",
+                text: "A velocidade com que você se adaptou ao nosso ritmo assusta (no bom sentido)."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Upgrade Concluído",
+                highlight: "LEGAL",
+                highlightLabel: "2.0",
+                text: "Trazendo a solidez do direito tradicional com a agilidade que a gente precisa."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Meta 2026:",
+                highlight: "EMPIRE",
+                highlightLabel: "MODE 🏛️",
+                text: "Hoje é só você. Ano que vem, você vai liderar o time que você mesmo vai construir."
+            },
+            {
+                type: 'outro',
+                bg: 'bg-tech',
+                title: "Feliz Natal, Kai!",
+                text: "Que começo incrível! Estamos ansiosos para ver o time que você vai montar. Bem-vindo ao foguete! 🚀",
+                cta: "Lead the Way",
+                ctaLink: "https://www.jumpstartimmigration.com/",
+                footer: "Official Head of Legal"
+            }
+        ]
+    },
+    {
+        id: 'luiz',
+        name: 'Luiz Felipe',
+        role: 'Tech Intern',
+        avatar: luizImg,
+        theme: 'tech',
+        stats: {
+            items: [
+                { label: 'Dias de Casa', value: '< 30' },
+                { label: 'Velocidade', value: 'Light' },
+                { label: 'Bugs', value: 'Zapped' }
+            ]
+        },
+        slides: [
+            {
+                type: 'intro',
+                bg: 'bg-tech',
+                title: "LUIZ WRAPPED 2025",
+                subtitle: "O Estagiário que já sentou na janelinha.",
+                sticker: "Prodigy ⚡"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "Efeito Dezembro ⚡",
+                highlight: "TIME",
+                highlightLabel: "WARP",
+                text: "Você tem menos de 30 dias de casa, mas já conhece a plataforma melhor que muita gente. Como isso é possível?"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Entrega em Tempo Recorde",
+                highlight: "FAST",
+                highlightLabel: "DELIVERY",
+                text: "O Mateus mal termina de pedir a feature e você já manda o Pull Request. A velocidade é surreal."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Download Completo 🧠",
+                highlight: "FULL",
+                highlightLabel: "DOWNLOAD",
+                text: "Curva de aprendizado? A sua foi uma linha reta pra cima. Você absorveu o código fonte inteiro em dias."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "A Dupla Tech",
+                highlight: "DEV",
+                highlightLabel: "DUO",
+                text: "Junto com o mestre Mateus e entregando valor real. O estagiário que dá orgulho pro CTO."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-green',
+                title: "Código Limpo ✨",
+                highlight: "CLEAN",
+                highlightLabel: "CODE",
+                text: "Estagiário no crachá, mas a qualidade da entrega é de gente grande."
+            },
+            {
+                type: 'persona',
+                bg: 'bg-christmas-red',
+                title: "Mãos de Midas",
+                mainText: "\"UPGRADE\"",
+                subText: "Tudo que você toca na plataforma fica melhor, mais rápido e mais eficiente.",
+                sticker: "Golden Touch 🌟",
+                showAvatar: true
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Quebra de Expectativa",
+                highlight: "ROCK",
+                highlightLabel: "STAR",
+                text: "Você redefiniu o que a gente espera de um estagiário. A barra subiu!"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Próxima Fase: 2026 🎮",
+                highlight: "LEVEL",
+                highlightLabel: "UP",
+                text: "Se em 15 dias você fez isso, imagine em um ano inteiro? O céu é o limite."
+            },
+            {
+                type: 'outro',
+                bg: 'bg-tech',
+                title: "Feliz Natal, Luiz!",
+                text: "Continue acelerando. Estamos muito felizes de ter você no time Jumpstart! 🚀🎄",
+                cta: "Press Start",
+                ctaLink: "https://www.jumpstartimmigration.com/",
+                footer: "Official Tech Prodigy"
             }
         ]
     }

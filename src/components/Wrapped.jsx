@@ -6,10 +6,14 @@ export function Wrapped({ member, onClose }) {
     const timerRef = useRef(null);
     const STORY_DURATION = 6000;
 
+    const [isPaused, setIsPaused] = useState(false);
+
     useEffect(() => {
-        startTimer();
+        if (!isPaused) {
+            startTimer();
+        }
         return () => clearTimeout(timerRef.current);
-    }, [currentSlide]);
+    }, [currentSlide, isPaused]);
 
     const startTimer = () => {
         clearTimeout(timerRef.current);
@@ -19,10 +23,12 @@ export function Wrapped({ member, onClose }) {
     };
 
     const nextSlide = () => {
+        setIsPaused(false);
         if (currentSlide < totalSlides - 1) setCurrentSlide(prev => prev + 1);
     };
 
     const prevSlide = () => {
+        setIsPaused(false);
         if (currentSlide > 0) setCurrentSlide(prev => prev - 1);
         else setCurrentSlide(0);
     };
@@ -52,6 +58,25 @@ export function Wrapped({ member, onClose }) {
 
     return (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-xl">
+            {/* PAUSE/PLAY BUTTON */}
+            <button
+                onClick={(e) => {
+                    e.stopPropagation();
+                    setIsPaused(!isPaused);
+                }}
+                className="absolute top-10 left-6 z-[70] text-white/50 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+            >
+                {isPaused ? (
+                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z" />
+                    </svg>
+                ) : (
+                    <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                    </svg>
+                )}
+            </button>
+
             {/* CLOSE BUTTON */}
             <button
                 onClick={onClose}
@@ -87,7 +112,8 @@ export function Wrapped({ member, onClose }) {
                                 className={`h-full bg-white origin-left ${idx < currentSlide ? 'w-full' : 'w-0'
                                     }`}
                                 style={{
-                                    animation: idx === currentSlide ? `grow ${STORY_DURATION}ms linear` : 'none'
+                                    animation: idx === currentSlide ? `grow ${STORY_DURATION}ms linear` : 'none',
+                                    animationPlayState: isPaused ? 'paused' : 'running'
                                 }}
                             />
                         </div>
@@ -113,7 +139,7 @@ function SlideContent({ slide, member }) {
                 <div className={anim}>
                     <div className="flex-1 flex flex-col justify-center w-full">
                         <p className="text-[#FFD700] text-sm font-bold uppercase tracking-widest mb-6">{slide.sticker}</p>
-                        <h1 className="text-4xl md:text-6xl font-black uppercase text-white leading-tight mb-8 drop-shadow-lg break-words">
+                        <h1 className="text-3xl md:text-5xl font-black uppercase text-white leading-tight mb-8 drop-shadow-lg break-words">
                             {member.name}'s<br />
                             <span className="text-[#1DB954]">2025</span>
                         </h1>
@@ -123,11 +149,12 @@ function SlideContent({ slide, member }) {
             );
         case 'stat-highlight':
             // Granular sizing logic for better fit
-            const len = slide.highlight.length;
-            let sizeClass = "text-5xl md:text-7xl";
-            if (len > 8) sizeClass = "text-4xl md:text-6xl";
-            if (len > 15) sizeClass = "text-3xl md:text-5xl";
-            if (len > 25) sizeClass = "text-2xl md:text-4xl";
+            const len = typeof slide.highlight === 'string' ? slide.highlight.length : 10;
+            let sizeClass = "text-4xl md:text-6xl"; // Default for short text (< 8 chars)
+
+            if (len >= 8) sizeClass = "text-3xl md:text-5xl"; // APPROVED, SHERLOCK (8 chars) fit better here
+            if (len > 15) sizeClass = "text-2xl md:text-4xl";
+            if (len > 25) sizeClass = "text-xl md:text-3xl";
 
             return (
                 <div className={anim}>
@@ -184,7 +211,7 @@ function SlideContent({ slide, member }) {
                                 />
                             </div>
                         )}
-                        <h1 className="text-4xl md:text-6xl font-black uppercase mb-6 tracking-tight leading-none break-words w-full">{slide.mainText}</h1>
+                        <h1 className="text-2xl md:text-4xl font-black uppercase mb-6 tracking-tight leading-none break-words w-full">{slide.mainText}</h1>
                         <p className="text-lg md:text-xl mb-10 opacity-90 mx-auto">{slide.subText}</p>
                         <span className="bg-white text-black font-bold px-8 py-3 rounded-full transform -rotate-2 inline-block shadow-xl text-base md:text-lg">
                             {slide.sticker}
@@ -224,7 +251,7 @@ function SlideContent({ slide, member }) {
             return (
                 <div className={anim}>
                     <div className="flex-1 flex flex-col justify-center w-full">
-                        <h1 className="text-5xl md:text-6xl font-black mb-10 text-[#FFD700] leading-none drop-shadow-lg break-words">{slide.title}</h1>
+                        <h1 className="text-4xl md:text-5xl font-black mb-10 text-[#FFD700] leading-none drop-shadow-lg break-words">{slide.title}</h1>
                         <p className="text-xl md:text-2xl mb-16 opacity-90 mx-auto font-medium">{slide.text}</p>
                         <a
                             href={slide.ctaLink}
