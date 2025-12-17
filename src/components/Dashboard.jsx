@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { TeamCard } from './TeamCard';
 
-export function Dashboard({ team, onMemberSelect }) {
+export function Dashboard({ team }) {
+    const navigate = useNavigate();
+
     return (
         <div className="relative min-h-screen w-full bg-black selection:bg-[#1DB954] selection:text-black">
             <div className="snow-container" />
@@ -34,7 +37,7 @@ export function Dashboard({ team, onMemberSelect }) {
                         <div key={member.id} className="w-full max-w-[320px] sm:max-w-none">
                             <TeamCard
                                 member={member}
-                                onClick={onMemberSelect}
+                                onClick={() => navigate(`/wrapped/${member.id}`)}
                             />
                         </div>
                     ))}

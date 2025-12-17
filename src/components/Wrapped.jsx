@@ -1,8 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
+import { teamData } from '../data/team.jsx';
 
-export function Wrapped({ member, onClose }) {
+export function Wrapped() {
+    const { memberId } = useParams();
+    const navigate = useNavigate();
+    const member = teamData.find(m => m.id === memberId);
+
     const [currentSlide, setCurrentSlide] = useState(0);
-    const totalSlides = member.slides.length;
+    const totalSlides = member ? member.slides.length : 0;
     const timerRef = useRef(null);
     const STORY_DURATION = 6000;
 
@@ -79,7 +85,7 @@ export function Wrapped({ member, onClose }) {
 
             {/* CLOSE BUTTON */}
             <button
-                onClick={onClose}
+                onClick={() => navigate('/')}
                 className="absolute top-10 right-6 z-[70] text-white/50 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
             >
                 <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">

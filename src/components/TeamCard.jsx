@@ -23,9 +23,6 @@ export function TeamCard({ member, onClick }) {
                     {member.name}
                 </h3>
                 <div className="h-0.5 w-12 bg-[#1DB954] mb-3 transform scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-500" />
-                <p className="text-gray-300 text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 delay-75">
-                    {member.role}
-                </p>
             </div>
 
             {/* HOVER BORDER */}
