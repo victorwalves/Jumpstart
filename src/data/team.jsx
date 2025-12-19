@@ -8,9 +8,244 @@ import amandaImg from '../assets/amanda.jpg';
 import biaImg from '../assets/bia.jpg';
 import josiasImg from '../assets/josias.jpg';
 import kaiImg from '../assets/kai.jpg';
+
 import luizImg from '../assets/luiz.jpg';
+import jumpstartCoverImg from '../assets/jumpstart_cover.jpg';
+import jumpinhoImg from '../assets/jumpinho.png';
+import jumpstartLogo from '../assets/jumpstart_logo.png';
+
 
 export const teamData = [
+    {
+        id: 'jumpstart',
+        name: 'Jumpstart',
+        role: 'Year Review',
+        avatar: jumpstartCoverImg,
+        theme: 'founder',
+        stats: {
+            items: [
+                { label: 'Crescimento', value: '+30%' },
+                { label: 'Receita', value: 'R$ 2.7M' },
+                { label: 'Time', value: '12 🚀' }
+            ]
+        },
+        slides: [
+            {
+                type: 'intro',
+                bg: 'bg-christmas-red',
+                title: "JUMPSTART WRAPPED 2025",
+                subtitle: "O ano que a gente fez nevar no verão brasileiro.",
+                sticker: "The Big Wrap 🎁"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "O Primeiro Milhão 💰",
+                highlight: "R$ 1M",
+                highlightLabel: "REACHED",
+                text: "O melhor presente de Natal antecipado. Batemos a marca histórica!"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "Segura esse Trenó!",
+                highlight: "+30%",
+                highlightLabel: "CRESCIMENTO MoM",
+                text: "Crescemos mês a mês mais rápido que a barriga do Papai Noel."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-green',
+                title: "Olhando pro Futuro",
+                highlight: "R$ 2.7M",
+                highlightLabel: "ARR",
+                text: "Anualizado. A previsão para 2026 é de muito sol (e muita receita)."
+            },
+            {
+                type: 'chart',
+                bg: 'bg-christmas-red',
+                title: "A Família Cresceu",
+                subtitle: "Começamos em 5 gatos pingados... Agora somos 12 Vingadores.",
+                chartData: [
+                    { label: 'Jan', value: 5, color: '#e5e7eb' },
+                    { label: 'Dec', value: 12, color: '#1DB954' }
+                ],
+                footer: "Status: Casa Cheia House Full"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "E não paramos...",
+                highlight: "HIRING",
+                highlightLabel: "WE WANT YOU",
+                text: "Tem cadeira vazia na ceia. Mande currículos!"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Nasceu a Plataforma 💻",
+                highlight: "MVP",
+                highlightLabel: "REAL",
+                text: "O MVP virou produto real. Agora a mágica acontece com cliques."
+            },
+            {
+                type: 'list',
+                bg: 'bg-christmas-green',
+                title: "Extra! Extra! 📰",
+                items: [
+                    { label: "Veículos", value: "+10" },
+                    { label: "Fama", value: "Internacional" },
+                    { label: "O Fabi", value: "Falou Muito" }
+                ],
+                subtitle: "Saímos em +10 veículos e jornais. O Fabi falou mais que o homem da cobra!"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Casa Arrumada",
+                highlight: "OPS",
+                highlightLabel: "CLEAN",
+                text: "A operação deixou de ser um emaranhado de pisca-pisca e virou um laser."
+            },
+            {
+                type: 'persona',
+                bg: 'bg-christmas-red',
+                title: "O Dono do Brasil 🇧🇷",
+                mainText: "\"JUMPINHO\"",
+                subText: "O Jumpinho vai dominar o mundo!",
+                sticker: "O seu amiguinho!",
+                showAvatar: true,
+                customAvatar: jumpinhoImg
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "Prontos para 2026!",
+                highlight: "ROCKET",
+                highlightLabel: "LAUNCH",
+                text: "A base está pronta, o time está montado e o tanque está cheio."
+            },
+            {
+                type: 'outro',
+                bg: 'bg-christmas-gold',
+                title: "Obrigado, Time Jumpstart! ❤️",
+                text: "Investidores e Time: vocês são as estrelas da nossa árvore. Feliz Natal!",
+                cta: "Lets go 2026",
+                ctaLink: "https://www.jumpstartimmigration.com/",
+                footerLogo: jumpstartLogo
+            }
+        ]
+    },
+    {
+        id: 'investors',
+        name: 'Investors',
+        role: 'Year Review',
+        avatar: jumpstartCoverImg,
+        theme: 'founder',
+        stats: {
+            items: [
+                { label: 'Revenue', value: '$1M+' },
+                { label: 'Growth', value: '30% MoM' },
+                { label: 'Scale', value: 'Global 🌎' }
+            ]
+        },
+        slides: [
+            {
+                type: 'intro',
+                bg: 'bg-christmas-red',
+                title: "JUMPSTART WRAPPED 2025",
+                subtitle: "What a year! Buckle up.",
+                sticker: "Investors Edition 🚀"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "First Million Unlocked! 🔓",
+                highlight: "R$ 1M",
+                highlightLabel: "CONTRACTED REVENUE",
+                text: "We hit the big milestone. Market fit: Validated."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "We Are Flying",
+                highlight: ">30%",
+                highlightLabel: "MoM GROWTH",
+                text: "Breaking records every single month."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-green',
+                title: "Next Stop?",
+                highlight: "R$ 2.7M",
+                highlightLabel: "ARR",
+                text: "Entering 2026 with serious momentum."
+            },
+            {
+                type: 'chart',
+                bg: 'bg-christmas-red',
+                title: "From 5 to 12 Rockstars",
+                subtitle: "Top talent only. No passengers, just drivers.",
+                chartData: [
+                    { label: 'Start', value: 5, color: '#e5e7eb' },
+                    { label: 'Now', value: 12, color: '#1DB954' }
+                ],
+                footer: "Status: Team Doubled"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "Good Problems to Have",
+                highlight: "DEMAND",
+                highlightLabel: "> CAPACITY",
+                text: "We are hiring fast to keep up with the market!"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "It's Alive! 🤖",
+                highlight: "PLATFORM",
+                highlightLabel: "LAUNCHED",
+                text: "Platform launched successfully. We are now officially a Tech Company."
+            },
+            {
+                type: 'list',
+                bg: 'bg-christmas-green',
+                title: "Making Headlines 📰",
+                items: [
+                    { label: "Media Outlets", value: "10+" },
+                    { label: "Buzz", value: "High" },
+                    { label: "Brand", value: "Strong" }
+                ],
+                subtitle: "Everyone is talking about Jumpstart."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "We Cleaned the House",
+                highlight: "OPS",
+                highlightLabel: "STREAMLINED",
+                text: "Operations are now fast, organized, and scalable."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "2026 Mission",
+                highlight: "GLOBAL",
+                highlightLabel: "SCALE 🌎",
+                text: "We proved the model. Now we multiply it."
+            },
+            {
+                type: 'outro',
+                bg: 'bg-christmas-gold',
+                title: "Thank You!",
+                text: "To our investors: Thanks for trusting the vision. Let's rock 2026!",
+                cta: "Lets go 2026",
+                ctaLink: "https://www.jumpstartimmigration.com/",
+                footerLogo: jumpstartLogo
+            }
+        ]
+    },
     {
         id: 'fabi',
         name: 'Fabi',

@@ -146,8 +146,16 @@ function SlideContent({ slide, member }) {
                     <div className="flex-1 flex flex-col justify-center w-full">
                         <p className="text-[#FFD700] text-sm font-bold uppercase tracking-widest mb-6">{slide.sticker}</p>
                         <h1 className="text-3xl md:text-5xl font-black uppercase text-white leading-tight mb-8 drop-shadow-lg break-words">
-                            {member.name}'s<br />
-                            <span className="text-[#1DB954]">2025</span>
+                            {slide.title && slide.title.includes('2025') ? (
+                                <>
+                                    {slide.title.split('2025')[0]}
+                                    <br />
+                                    <span className="text-[#1DB954]">2025</span>
+                                    {slide.title.split('2025')[1]}
+                                </>
+                            ) : (
+                                slide.title || `${member.name}'s 2025`
+                            )}
                         </h1>
                         <p className="text-xl md:text-2xl text-gray-200 font-medium px-4 leading-relaxed">{slide.subtitle}</p>
                     </div>
@@ -211,7 +219,7 @@ function SlideContent({ slide, member }) {
                         {slide.showAvatar && (
                             <div className="w-40 h-40 md:w-52 md:h-52 mx-auto rounded-full border-4 border-[#1DB954] overflow-hidden mb-8 shadow-[0_0_30px_rgba(29,185,84,0.4)]">
                                 <img
-                                    src={member.avatar}
+                                    src={slide.customAvatar || member.avatar}
                                     className="w-full h-full object-cover"
                                     onError={(e) => { e.target.src = `https://api.dicebear.com/7.x/avataaars/svg?seed=${member.id}` }}
                                 />
@@ -267,7 +275,11 @@ function SlideContent({ slide, member }) {
                         >
                             {slide.cta}
                         </a>
-                        {slide.footer && <p className="mt-12 text-sm opacity-50 font-mono tracking-widest uppercase">{slide.footer}</p>}
+                        {slide.footerLogo ? (
+                            <img src={slide.footerLogo} alt="Logo" className="mt-12 w-32 mx-auto opacity-80" />
+                        ) : (
+                            slide.footer && <p className="mt-12 text-sm opacity-50 font-mono tracking-widest uppercase">{slide.footer}</p>
+                        )}
                     </div>
                 </div>
             );
