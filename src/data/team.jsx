@@ -25,7 +25,7 @@ export const teamData = [
         stats: {
             items: [
                 { label: 'Crescimento', value: '+30%' },
-                { label: 'Receita', value: 'R$ 2.7M' },
+                { label: 'Receita', value: 'US$ 2.7M' },
                 { label: 'Time', value: '12 🚀' }
             ]
         },
@@ -179,8 +179,8 @@ export const teamData = [
                 type: 'stat-highlight',
                 bg: 'bg-christmas-green',
                 title: "Next Stop?",
-                highlight: "R$ 2.7M",
-                highlightLabel: "ARR",
+                highlight: "US$ 2.7M",
+                highlightLabel: "And growing",
                 text: "Entering 2026 with serious momentum."
             },
             {
