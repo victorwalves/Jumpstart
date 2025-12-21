@@ -12,7 +12,10 @@ export function Dashboard({ team }) {
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-10 py-12 md:py-20 flex flex-col items-center">
 
                 {/* LOGO AREA - Centered and Proportional */}
-                <div className="w-full mt-8 mb-8 md:mb-12 flex justify-center text-center">
+                <div
+                    onClick={() => navigate('/')}
+                    className="w-full mt-8 mb-8 md:mb-12 flex justify-center text-center cursor-pointer hover:scale-105 transition-transform"
+                >
                     <h2 className="text-4xl font-black tracking-tighter text-white">
                         JUMP<span className="text-[#1DB954]">START</span>
                     </h2>

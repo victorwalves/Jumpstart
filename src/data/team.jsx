@@ -163,7 +163,7 @@ export const teamData = [
                 type: 'stat-highlight',
                 bg: 'bg-christmas-gold',
                 title: "First Million Unlocked! 🔓",
-                highlight: "R$ 1M",
+                highlight: "US$ 1M",
                 highlightLabel: "CONTRACTED REVENUE",
                 text: "We hit the big milestone. Market fit: Validated."
             },
