@@ -9,6 +9,7 @@ import biaImg from '../assets/bia.jpg';
 import josiasImg from '../assets/josias.jpg';
 import kaiImg from '../assets/kai.jpg';
 
+import livyImg from '../assets/livy.jpg';
 import luizImg from '../assets/luiz.jpg';
 import jumpstartCoverImg from '../assets/jumpstart_cover.jpg';
 import jumpinhoImg from '../assets/jumpinho.png';
@@ -1212,6 +1213,102 @@ export const teamData = [
                 cta: "Press Start",
                 ctaLink: "https://www.jumpstartimmigration.com/",
                 footer: "Official Tech Prodigy"
+            }
+        ]
+    },
+    {
+        id: 'livy',
+        name: 'Livy',
+        role: 'Operations',
+        avatar: livyImg,
+        theme: 'ops',
+        stats: {
+            items: [
+                { label: 'Dias de Casa', value: '5' },
+                { label: 'Impacto', value: 'Instante' },
+                { label: 'Energy', value: '100%' }
+            ]
+        },
+        slides: [
+            {
+                type: 'intro',
+                bg: 'bg-christmas-red',
+                title: "LIVY WRAPPED... OPS, STARTED 2025",
+                subtitle: "A última peça do quebra-cabeça de 2025.",
+                sticker: "The New Challenger 🆕"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-green',
+                title: "Tempo de Casa",
+                highlight: "1 Semana",
+                highlightLabel: "FRESH START",
+                text: "Você mal chegou e já sentou na janela. Isso que é entrada triunfal."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "Download em Progresso 🧠",
+                highlight: "LOADING",
+                highlightLabel: "KNOWLEDGE",
+                text: "Absorvendo anos de conhecimento migratório em dias. O cérebro deve estar fervendo, mas o sorriso está lá."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Olhar de Novato",
+                highlight: "FRESH EYES",
+                highlightLabel: "PERSPECTIVE",
+                text: "Você traz aquele olhar fresco que a gente precisava para dizer: 'Por que fazemos assim? Dá pra ser melhor!'"
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "A Dupla de Operações",
+                highlight: "LIVY & BIA",
+                highlightLabel: "DREAM TEAM",
+                text: "A Bia organizou a casa, e você chegou para ajudar a manter o castelo de pé. Ninguém segura essa dupla."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-black',
+                title: "Primeiros Impactos",
+                highlight: "ACTION",
+                highlightLabel: "TAKING",
+                text: "Mesmo com dias de casa, você já está colocando a mão na massa e otimizando fluxos."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-tech',
+                title: "Spoiler de 2026",
+                highlight: "1%",
+                highlightLabel: "BUT DREAMING BIG",
+                text: "Se em uma semana você já mostrou a que veio, 2026 vai ser pequeno para você."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-gold',
+                title: "Sua Missão:",
+                highlight: "DOMINAR",
+                highlightLabel: "A OPERAÇÃO ⚙️",
+                text: "Aprender, Otimizar e Executar. O time conta com sua energia para voarmos mais alto."
+            },
+            {
+                type: 'stat-highlight',
+                bg: 'bg-christmas-red',
+                title: "Bem-vinda à Loucura!",
+                highlight: "TEAM",
+                highlightLabel: "VIBES",
+                text: "Startup é caos, correria e propósito. Que bom que você escolheu pular nesse barco com a gente."
+            },
+            {
+                type: 'outro',
+                bg: 'bg-cream',
+                title: "Feliz Ano Novo, Livy!",
+                text: "2025 foi só o 'Oi'. 2026 é onde sua história na Jumpstart realmente começa. Vamos com tudo! 🚀✨",
+                cta: "Lets go 2026",
+                ctaLink: "https://www.jumpstartimmigration.com/",
+                footer: "Future Ops Star"
             }
         ]
     }
