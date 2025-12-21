@@ -38,10 +38,21 @@ export const teamData = [
                 sticker: "The Big Wrap 🎁"
             },
             {
+                type: 'persona',
+                bg: 'bg-christmas-red',
+                title: "O Dono do Brasil 🇧🇷",
+                mainText: "\"JUMPINHO\"",
+                subText: "O Jumpinho vai dominar o mundo!",
+                sticker: "O seu amiguinho!",
+                noRotate: true,
+                showAvatar: true,
+                customAvatar: jumpinhoImg
+            },
+            {
                 type: 'stat-highlight',
                 bg: 'bg-christmas-gold',
                 title: "O Primeiro Milhão 💰",
-                highlight: "R$ 1M",
+                highlight: "US$ 1M",
                 highlightLabel: "REACHED",
                 text: "O melhor presente de Natal antecipado. Batemos a marca histórica!"
             },
@@ -58,13 +69,13 @@ export const teamData = [
                 bg: 'bg-christmas-green',
                 title: "Olhando pro Futuro",
                 highlight: "R$ 2.7M",
-                highlightLabel: "ARR",
+                highlightLabel: "E crescendo",
                 text: "Anualizado. A previsão para 2026 é de muito sol (e muita receita)."
             },
             {
                 type: 'chart',
                 bg: 'bg-christmas-red',
-                title: "A Família Cresceu",
+                title: "Temos mais Jumpinhos",
                 subtitle: "Começamos em 5 gatos pingados... Agora somos 12 Vingadores.",
                 chartData: [
                     { label: 'Jan', value: 5, color: '#e5e7eb' },
@@ -95,7 +106,7 @@ export const teamData = [
                 items: [
                     { label: "Veículos", value: "+10" },
                     { label: "Fama", value: "Internacional" },
-                    { label: "O Fabi", value: "Falou Muito" }
+                    { label: "O Fabi", value: "Fala, Habla & Speak" }
                 ],
                 subtitle: "Saímos em +10 veículos e jornais. O Fabi falou mais que o homem da cobra!"
             },
@@ -107,16 +118,7 @@ export const teamData = [
                 highlightLabel: "CLEAN",
                 text: "A operação deixou de ser um emaranhado de pisca-pisca e virou um laser."
             },
-            {
-                type: 'persona',
-                bg: 'bg-christmas-red',
-                title: "O Dono do Brasil 🇧🇷",
-                mainText: "\"JUMPINHO\"",
-                subText: "O Jumpinho vai dominar o mundo!",
-                sticker: "O seu amiguinho!",
-                showAvatar: true,
-                customAvatar: jumpinhoImg
-            },
+
             {
                 type: 'stat-highlight',
                 bg: 'bg-tech',
@@ -127,9 +129,9 @@ export const teamData = [
             },
             {
                 type: 'outro',
-                bg: 'bg-christmas-gold',
+                bg: 'bg-cream',
                 title: "Obrigado, Time Jumpstart! ❤️",
-                text: "Investidores e Time: vocês são as estrelas da nossa árvore. Feliz Natal!",
+                text: "Investidores e amigos: vocês são as estrelas da nossa árvore. Feliz Natal!",
                 cta: "Lets go 2026",
                 ctaLink: "https://www.jumpstartimmigration.com/",
                 footerLogo: jumpstartLogo
@@ -190,7 +192,7 @@ export const teamData = [
                     { label: 'Start', value: 5, color: '#e5e7eb' },
                     { label: 'Now', value: 12, color: '#1DB954' }
                 ],
-                footer: "Status: Team Doubled"
+                footer: "Status: Still Hiring"
             },
             {
                 type: 'stat-highlight',
@@ -206,15 +208,15 @@ export const teamData = [
                 title: "It's Alive! 🤖",
                 highlight: "PLATFORM",
                 highlightLabel: "LAUNCHED",
-                text: "Platform launched successfully. We are now officially a Tech Company."
+                text: "Platform launched successfully."
             },
             {
                 type: 'list',
-                bg: 'bg-christmas-green',
+                bg: 'bg-christmas-green-light',
                 title: "Making Headlines 📰",
                 items: [
                     { label: "Media Outlets", value: "10+" },
-                    { label: "Buzz", value: "High" },
+                    { label: "Articles", value: "in English, Spanish and Portuguese" },
                     { label: "Brand", value: "Strong" }
                 ],
                 subtitle: "Everyone is talking about Jumpstart."
@@ -237,7 +239,7 @@ export const teamData = [
             },
             {
                 type: 'outro',
-                bg: 'bg-christmas-gold',
+                bg: 'bg-cream',
                 title: "Thank You!",
                 text: "To our investors: Thanks for trusting the vision. Let's rock 2026!",
                 cta: "Lets go 2026",

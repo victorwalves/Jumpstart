@@ -55,11 +55,27 @@ export function Wrapped() {
         const map = {
             'bg-christmas-red': 'bg-[#8E0E00]',
             'bg-christmas-green': 'bg-[#0B4F28]',
+            'bg-christmas-green-light': 'bg-[#1A6338]', // Slightly lighter green
             'bg-christmas-gold': 'bg-[#B8860B]',
+            'bg-cream': 'bg-[#F9F4E0]',
             'bg-tech': 'bg-[#291e3e]',
             'bg-black': 'bg-black'
         };
         return map[name] || 'bg-black';
+    };
+
+    const isLightBg = slide.bg === 'bg-cream';
+    const textColor = isLightBg ? 'text-gray-900' : 'text-white';
+    const accentColor = isLightBg ? 'text-[#0B4F28]' : 'text-[#1DB954]'; // Darker green for light bg
+
+
+
+    const themeColors = {
+        text: isLightBg ? 'text-gray-900' : 'text-white',
+        accent: isLightBg ? 'text-[#0B4F28]' : 'text-[#1DB954]', // Darker green for light bg
+        gold: isLightBg ? 'text-[#B8860B]' : 'text-[#FFD700]', // Darker gold for light bg
+        subText: isLightBg ? 'text-gray-600' : 'text-gray-200',
+        chartValue: isLightBg ? 'text-gray-800' : 'text-white'
     };
 
     return (
@@ -70,7 +86,7 @@ export function Wrapped() {
                     e.stopPropagation();
                     setIsPaused(!isPaused);
                 }}
-                className="absolute top-10 left-6 z-[70] text-white/50 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+                className={`absolute top-10 left-6 z-[70] p-2 rounded-full transition-colors ${isLightBg ? 'text-black/50 hover:text-black hover:bg-black/10' : 'text-white/50 hover:text-white hover:bg-white/10'}`}
             >
                 {isPaused ? (
                     <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
@@ -86,7 +102,7 @@ export function Wrapped() {
             {/* CLOSE BUTTON */}
             <button
                 onClick={() => navigate('/')}
-                className="absolute top-10 right-6 z-[70] text-white/50 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors"
+                className={`absolute top-10 right-6 z-[70] p-2 rounded-full transition-colors ${isLightBg ? 'text-black/50 hover:text-black hover:bg-black/10' : 'text-white/50 hover:text-white hover:bg-white/10'}`}
             >
                 <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -100,13 +116,13 @@ export function Wrapped() {
             >
                 {/* BACKGROUND */}
                 <div className={`absolute inset-0 transition-colors duration-700 ${getBg(slide.bg)}`}>
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 pointer-events-none" />
+                    <div className={`absolute inset-0 bg-gradient-to-b ${isLightBg ? 'from-white/30 via-transparent to-black/10' : 'from-black/30 via-transparent to-black/60'} pointer-events-none`} />
                 </div>
 
                 {/* LOGO */}
                 <div className="absolute top-12 left-0 w-full flex justify-center z-20 pointer-events-none">
-                    <h3 className="text-2xl font-black tracking-tighter text-white drop-shadow-lg">
-                        JUMP<span className="text-[#1DB954]">START</span>
+                    <h3 className={`text-2xl font-black tracking-tighter drop-shadow-lg ${textColor}`}>
+                        JUMP<span className={accentColor}>START</span>
                     </h3>
                 </div>
 
@@ -127,37 +143,46 @@ export function Wrapped() {
                 </div>
 
                 {/* CONTENT */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4 md:p-8 text-center z-10 select-none overflow-hidden mt-12 pb-12 w-full">
-                    <SlideContent slide={slide} member={member} />
+                <div className={`absolute inset-0 flex flex-col items-center justify-center p-4 md:p-8 text-center z-10 select-none overflow-hidden mt-12 pb-12 w-full ${isLightBg ? 'text-gray-900' : 'text-white'}`}>
+                    <SlideContent slide={slide} member={member} theme={themeColors} />
                 </div>
             </div>
         </div>
     );
 }
 
-function SlideContent({ slide, member }) {
+function SlideContent({ slide, member, theme }) {
     // Simple, robust animations for content
     const anim = "animate-in fade-in slide-in-from-bottom-8 duration-700 flex flex-col items-center justify-around h-full max-h-[70vh] w-[90%] mx-auto";
+
+    // Default theme fallback if not provided (for safety)
+    const t = theme || {
+        text: 'text-white',
+        accent: 'text-[#1DB954]',
+        gold: 'text-[#FFD700]',
+        subText: 'text-gray-200',
+        chartValue: 'text-white'
+    };
 
     switch (slide.type) {
         case 'intro':
             return (
                 <div className={anim}>
                     <div className="flex-1 flex flex-col justify-center w-full">
-                        <p className="text-[#FFD700] text-sm font-bold uppercase tracking-widest mb-6">{slide.sticker}</p>
-                        <h1 className="text-3xl md:text-5xl font-black uppercase text-white leading-tight mb-8 drop-shadow-lg break-words">
+                        <p className={`${t.gold} text-sm font-bold uppercase tracking-widest mb-6`}>{slide.sticker}</p>
+                        <h1 className={`text-3xl md:text-5xl font-black uppercase ${t.text} leading-tight mb-8 drop-shadow-lg break-words`}>
                             {slide.title && slide.title.includes('2025') ? (
                                 <>
                                     {slide.title.split('2025')[0]}
                                     <br />
-                                    <span className="text-[#1DB954]">2025</span>
+                                    <span className={t.accent}>2025</span>
                                     {slide.title.split('2025')[1]}
                                 </>
                             ) : (
                                 slide.title || `${member.name}'s 2025`
                             )}
                         </h1>
-                        <p className="text-xl md:text-2xl text-gray-200 font-medium px-4 leading-relaxed">{slide.subtitle}</p>
+                        <p className={`text-xl md:text-2xl ${t.subText} font-medium px-4 leading-relaxed`}>{slide.subtitle}</p>
                     </div>
                 </div>
             );
@@ -174,10 +199,10 @@ function SlideContent({ slide, member }) {
                 <div className={anim}>
                     <div className="flex-1 flex flex-col justify-center w-full">
                         <h2 className="text-xl md:text-2xl font-bold mb-8 opacity-90 uppercase tracking-wide">{slide.title}</h2>
-                        <div className={`${sizeClass} font-black text-[#FFD700] leading-none mb-8 drop-shadow-xl break-words w-full`}>
+                        <div className={`${sizeClass} font-black ${t.gold} leading-none mb-8 drop-shadow-xl break-words w-full`}>
                             {slide.highlight}
                         </div>
-                        <p className="text-base md:text-lg font-bold mb-8 uppercase tracking-widest text-[#1DB954]">{slide.highlightLabel}</p>
+                        <p className={`text-base md:text-lg font-bold mb-8 uppercase tracking-widest ${t.accent}`}>{slide.highlightLabel}</p>
                         <p className="text-xl md:text-2xl font-medium opacity-90 leading-relaxed mx-auto">{slide.text}</p>
                     </div>
                 </div>
@@ -194,7 +219,7 @@ function SlideContent({ slide, member }) {
                                 <div key={i} className="flex flex-col gap-2">
                                     <div className="flex justify-between text-sm md:text-base font-bold uppercase tracking-wider">
                                         <span>{d.label}</span>
-                                        <span className="opacity-70">{d.value}</span>
+                                        <span className={`opacity-70 ${t.chartValue}`}>{d.value}</span>
                                     </div>
                                     <div className="h-6 md:h-8 w-full bg-white/10 rounded-full overflow-hidden">
                                         <div
@@ -227,7 +252,7 @@ function SlideContent({ slide, member }) {
                         )}
                         <h1 className="text-2xl md:text-4xl font-black uppercase mb-6 tracking-tight leading-none break-words w-full">{slide.mainText}</h1>
                         <p className="text-lg md:text-xl mb-10 opacity-90 mx-auto">{slide.subText}</p>
-                        <span className="bg-white text-black font-bold px-8 py-3 rounded-full transform -rotate-2 inline-block shadow-xl text-base md:text-lg">
+                        <span className={`bg-white text-black font-bold px-8 py-3 rounded-full inline-block shadow-xl text-base md:text-lg ${slide.noRotate ? '' : 'transform -rotate-2'}`}>
                             {slide.sticker}
                         </span>
                     </div>
@@ -238,7 +263,7 @@ function SlideContent({ slide, member }) {
                 <div className={anim}>
                     <div className="flex-1 flex flex-col justify-center w-full">
                         <h2 className="text-base md:text-xl font-bold mb-12 opacity-60 uppercase tracking-widest">{slide.title}</h2>
-                        <h1 className="text-3xl md:text-5xl font-black italic mb-12 leading-snug text-[#FFD700]">
+                        <h1 className={`text-3xl md:text-5xl font-black italic mb-12 leading-snug ${t.gold}`}>
                             "{slide.quote}"
                         </h1>
                         {slide.subText && <p className="text-lg opacity-80 mb-8 mx-auto">{slide.subText}</p>}
@@ -254,7 +279,7 @@ function SlideContent({ slide, member }) {
                         {slide.items.map((item, i) => (
                             <div key={i} className="flex flex-col gap-2 border-l-4 border-[#1DB954] pl-6">
                                 <p className="text-xs md:text-sm uppercase tracking-widest opacity-60 font-bold">{item.label}</p>
-                                <p className="text-2xl md:text-3xl font-bold text-white break-words leading-tight">{item.value}</p>
+                                <p className={`text-2xl md:text-3xl font-bold ${t.text} break-words leading-tight`}>{item.value}</p>
                                 {item.sub && <p className="text-sm md:text-base opacity-50">{item.sub}</p>}
                             </div>
                         ))}
@@ -265,7 +290,7 @@ function SlideContent({ slide, member }) {
             return (
                 <div className={anim}>
                     <div className="flex-1 flex flex-col justify-center w-full">
-                        <h1 className="text-4xl md:text-5xl font-black mb-10 text-[#FFD700] leading-none drop-shadow-lg break-words">{slide.title}</h1>
+                        <h1 className={`text-4xl md:text-5xl font-black mb-10 ${t.gold} leading-none drop-shadow-lg break-words`}>{slide.title}</h1>
                         <p className="text-xl md:text-2xl mb-16 opacity-90 mx-auto font-medium">{slide.text}</p>
                         <a
                             href={slide.ctaLink}
