@@ -68,7 +68,7 @@ export const teamData = [
                 type: 'stat-highlight',
                 bg: 'bg-christmas-green',
                 title: "Olhando pro Futuro",
-                highlight: "R$ 2.7M",
+                highlight: "US$ 2.7M",
                 highlightLabel: "E crescendo",
                 text: "Anualizado. A previsão para 2026 é de muito sol (e muita receita)."
             },
